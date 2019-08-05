@@ -20,3 +20,6 @@ dsolve(eqn, u(x), ics=(u, x0, y0))
 @vars k m positive=true
 eqn = u''(x) + k/m*u(x)
 dsolve(eqn)
+
+@vars a positive=true
+dsolve(eqn, x, ics = ((u, 0, -a), (u', 0, 0)))
