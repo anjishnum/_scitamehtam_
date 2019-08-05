@@ -44,3 +44,9 @@ a2 = dsolve(u''(t) - g, t, ics=((u, 0, y0), (u', 0, v0 * sin(alpha))))
 ts = solve(x - rhs(a1), t)[1]
 y = simplify(rhs(a2)(t => ts))
 
+gamma = symbols("gamma")
+u = SymFunction("u")
+a1 = dsolve(u''(t) + gamma * u'(t),     t, ics=((u, 0, x0), (u', 0, v0 * cos(alpha))))
+a2 = dsolve(u''(t) + gamma * u'(t) + g, t, ics=((u, 0, y0), (u', 0, v0 * sin(alpha))))
+ts = solve(x - rhs(a1), t)[1]
+y = simplify(rhs(a2)(t => ts))
