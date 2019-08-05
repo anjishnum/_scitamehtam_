@@ -16,3 +16,7 @@ eq(C1 => c1[1])
 
 x0, y0 = 0, 1//2
 dsolve(eqn, u(x), ics=(u, x0, y0))
+
+@vars k m positive=true
+eqn = u''(x) + k/m*u(x)
+dsolve(eqn)
