@@ -23,3 +23,7 @@ dsolve(eqn)
 
 @vars a positive=true
 dsolve(eqn, x, ics = ((u, 0, -a), (u', 0, 0)))
+
+g, l = symbols("g, l", positive=true)
+eqn = u''(x) + g/l*sin(u(x))
+dsolve(eqn)
