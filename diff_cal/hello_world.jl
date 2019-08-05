@@ -31,3 +31,7 @@ dsolve(eqn, x, ics = ((u, 0, -a), (u', 0, 0)))
 
 eqn = u''(x) + g/l * u(x)
 dsolve(eqn, x, ics=((u, 0, a), (u', 0, 0)))
+
+out = dsolve(u'(x) - w/H * sqrt(1 + u(x)^2))
+eqn = u'(x) - rhs(out)
+out1 = dsolve(eqn)
