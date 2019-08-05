@@ -35,3 +35,12 @@ dsolve(eqn, x, ics=((u, 0, a), (u', 0, 0)))
 out = dsolve(u'(x) - w/H * sqrt(1 + u(x)^2))
 eqn = u'(x) - rhs(out)
 out1 = dsolve(eqn)
+
+@vars x0 y0 v0 alpha g real=true
+@vars x y t
+u = SymFunction("u")
+a1 = dsolve(u''(t) + 0, t, ics=((u, 0, x0), (u', 0, v0 * cos(alpha))))
+a2 = dsolve(u''(t) - g, t, ics=((u, 0, y0), (u', 0, v0 * sin(alpha))))
+ts = solve(x - rhs(a1), t)[1]
+y = simplify(rhs(a2)(t => ts))
+
