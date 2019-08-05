@@ -1,1 +1,1 @@
-# <t> Just do it </t>
+# <i> Just do it </i>
