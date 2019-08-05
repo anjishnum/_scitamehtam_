@@ -13,3 +13,6 @@ C1 = first(setdiff(free_symbols(eq), (x,a))) # fish out constant
 c1 = solve(eq(x=>0) - 1//2, C1)
 
 eq(C1 => c1[1])
+
+x0, y0 = 0, 1//2
+dsolve(eqn, u(x), ics=(u, x0, y0))
